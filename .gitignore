@@ -80,4 +80,7 @@ local.properties
 .buildpath
 
 # Idea
-# .idea
+.idea
+
+#c9
+.c9/*
