@@ -1,6 +1,7 @@
 <?php
+namespace SSC;
 
-class SSC{
+class Calendar{
     
     /** @var DateTime */
     public $start_date;
