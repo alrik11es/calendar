@@ -1,4 +1,5 @@
 <?php
+namespace SSC\formatters;
 
 interface FormatterInterface {
     
