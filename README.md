@@ -1,7 +1,7 @@
-Stupid Simple Calendar
+Stupidly Simple Calendar
 ======================
 
-Stupid Simple Calendar a.k.a. "SSC" is a PHP calendar structure generator in array, object or JSON format.
+Stupidly Simple Calendar a.k.a. "SSC" is a PHP calendar structure generator in array, object or JSON format.
 
 ##Motivation
 
