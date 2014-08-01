@@ -2,29 +2,34 @@
 namespace SSC;
 
 class Calendar{
-    
-    /** @var DateTime */
-    public $start_date;
-    /** @var DateInterval */
-    public $interval;
-    /** @var formatters\FormatterInterface */
-    private $formatter;
+
+    /** @var CalendarConfig */
+    public $config;
     
     public function __construct()
     {
-        $this->setFormatter(new \SSC\formatters\ObjectFormatter());
-        $this->start_date = new \DateTime();
-        $this->interval = new \DateInterval('P6M');
+        $default_config = new CalendarConfig();
+        $default_config->setFormatter(new \SSC\formatters\ObjectFormatter());
+        $default_config->start_date = new \DateTime();
+        $default_config->interval = new \DateInterval('P6M');
+        $default_config->generator = new generators\YearGenerator();
+        $this->config = $default_config;
     }
     
-    public function setFormatter(formatters\FormatterInterface $formatter)
+    public function setConfig(CalendarConfig $conf)
     {
-        $this->formatter = $formatter;    
-    }
-    
-    public function getCalendar()
-    {
-        echo $this->start_date->format(\DateTime::ATOM);
+        $this->config = $conf;    
     }
 
+    public function getConfig()
+    {
+        return $this->config;
+    }
+    
+    public function getCalendarStructure()
+    {
+        $this->config->generator->setConfig($this->config);
+        return $this->config->generator->generate();
+    }
+    
 }
