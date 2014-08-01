@@ -1,5 +1,7 @@
 <?php
 namespace SSC\formatters;
-class ArrayFormatter{
-    
+class ArrayFormatter implements FormatterInterface{
+    public function setFormat($data){
+        return $data;
+    }
 }

@@ -3,6 +3,6 @@ namespace SSC\formatters;
 
 interface FormatterInterface {
     
-    public function setFormat();
+    public function setFormat($data);
     
 }

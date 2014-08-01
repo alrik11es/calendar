@@ -9,9 +9,10 @@ class CalendarConfig{
     private $interval;
     /** @var formatters\FormatterInterface */
     private $formatter;
-    /** @var generators\GeneratorInterface */
-    private $generator;
-
+    
+    public $include_quarters = true;
+    public $include_weeks = true;
+    
     public function setFormatter(formatters\FormatterInterface $formatter)
     {
         $this->formatter = $formatter;    
@@ -38,13 +39,5 @@ class CalendarConfig{
     
     public function getStartDate(){
         return $this->start_date;
-    }
-    
-    public function setGenerator(generators\GeneratorInterface $generator){
-        $this->generator = $generator;
-    }
-    
-    public function getGenerator(){
-        return $this->generator;
     }
 }
