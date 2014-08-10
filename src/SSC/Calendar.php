@@ -3,17 +3,21 @@ namespace SSC;
 
 class Calendar{
     
-    const DAY = 'day';
-
     /** @var CalendarConfig */
     public $config;
     public $day_callback = null;
-    
+    public $month_callback = null;
+    public $week_callback = null;
+    public $quarter_callback = null;
+    public $year_callback = null;
+
     public function __construct()
     {
         $default_config = new CalendarConfig();
         $default_config->setFormatter(new \SSC\formatters\ArrayFormatter());
-        $default_config->setStartDate(new \DateTime());
+        $start_date = new \DateTime();
+        $start_date->sub(new \DateInterval('P'.($start_date->format('j')-1).'D'));
+        $default_config->setStartDate($start_date);
         $default_config->setInterval(new \DateInterval('P6M'));
         $this->config = $default_config;
     }
@@ -27,22 +31,23 @@ class Calendar{
     {
         return $this->config;
     }
-    
+
     public function setDataInElement($date, $element)
     {
         $result = null;
-        $element = $element.'_callback';
+
         if(isset($this->$element)){
-            $this->$element($date);
+            $result = $this->$element($date);
         }
+
         return $result;
     }
     
     public function getCalendarStructure()
     {
-        $end_date = new \DateTime();
+        $end_date = clone $this->config->getStartDate();
         $end_date->add($this->config->getInterval());
-        
+
         $period = new \DatePeriod(
              $this->config->getStartDate(),
              new \DateInterval('P1D'),
@@ -50,13 +55,73 @@ class Calendar{
         );
         
         $cal = array();
+
         foreach($period as $date){
-            $cal[$date->format('Y')][$date->format('n')][$date->format('j')] = $this->setDataInElement($date, self::DAY);
+            $year = $date->format('Y');
+            $month = $date->format('n');
+            $day = $date->format('j');
+            $quarter = (int) ceil($month / 3);
+            $week = $date->format('W');
+            $week_day = $date->format('w');
+
+            if(!array_key_exists($year, $cal)){
+                $cal[$year] = array(
+                    'type' => 'year',
+                    'value' => $year,
+                    'data' => $this->setDataInElement($date, 'year_callback'),
+                    'elements' => array()
+                );
+            }
+
+            if(!array_key_exists($quarter, $cal[$year]['elements'])){
+                $cal[$year]['elements'][$quarter] = array(
+                    'type' => 'quarter',
+                    'value' => $quarter,
+                    'data' => $this->setDataInElement($date, 'quarter_callback'),
+                    'elements' => array()
+                );
+            }
+
+            if(!array_key_exists($month, $cal[$year]['elements'][$quarter]['elements'])){
+                $cal[$year]['elements'][$quarter]['elements'][$month] = array(
+                    'type' => 'month',
+                    'value' => $month,
+                    'data' => $this->setDataInElement($date, 'month_callback'),
+                    'elements' => array()
+                );
+            }
+
+            if(!array_key_exists($week, $cal[$year]['elements'][$quarter]['elements'][$month]['elements'])){
+                $cal[$year]['elements'][$quarter]['elements'][$month]['elements'][$week] = array(
+                    'type' => 'week',
+                    'value' => $week,
+                    'data' => $this->setDataInElement($date, 'week_callback'),
+                    'elements' => array()
+                );
+            }
+
+            if(!array_key_exists($day, $cal[$year]['elements'][$quarter]['elements'][$month]['elements'][$week]['elements'])){
+                $cal[$year]['elements'][$quarter]['elements'][$month]['elements'][$week]['elements'][$day] = array(
+                    'type' => 'day',
+                    'value' => $day,
+                    'data' => $this->setDataInElement($date, 'day_callback'),
+                    'weekday' => $week_day,
+                );
+            }
         }
         
         $cal = $this->config->getFormatter()->setFormat($cal);
 
         return $cal;
     }
-    
+
+
+    public function __call($method, $args)
+    {
+        if(is_callable(array($this, $method))) {
+            return call_user_func_array($this->$method, $args);
+        }
+        // else throw exception
+    }
+
 }

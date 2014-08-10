@@ -12,7 +12,8 @@ class SSCTest extends PHPUnit_Framework_TestCase{
         $structure = $cal->getCalendarStructure();
         
         $this->assertArrayHasKey(date('Y'), $structure);
-        $this->assertArrayHasKey(date('n'), $structure[date('Y')]);
-        $this->assertArrayHasKey(date('j'), $structure[date('Y')][date('n')]);
+        $quarter = (int) ceil(date('n') / 3);
+        $this->assertArrayHasKey($quarter, $structure[date('Y')]['elements']);
+        $this->assertArrayHasKey(date('n'), $structure[date('Y')]['elements'][$quarter]['elements']);
     }
 }
