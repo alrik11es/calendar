@@ -54,11 +54,7 @@ Array
                                     (
                                     [type] => day
                                     [value] => 1
-                                    [data] => stdClass Object
-                                        (
-                                            [has_passed] => 1
-                                        )
-
+                                    [data] => 
                                     [weekday] => 5
                                     )
 ```
