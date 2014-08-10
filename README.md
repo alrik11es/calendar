@@ -101,7 +101,8 @@ Then you just have to take it and render in your Twig or whatever... (Next one i
 <?php endforeach; ?>
 ```
 
-Bam! Calendar!
+#Bam! Calendar!
+
 Oh BTW I can give you a Twig example Just for the record :P
 
 ```php
