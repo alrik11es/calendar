@@ -102,3 +102,68 @@ Then you just have to take it and render in your Twig or whatever... (Next one i
 ```
 
 Bam! Calendar!
+Oh BTW I can give you a Twig example Just for the record :P
+
+```php
+$cal = new \SSC\Calendar();
+$cal->getConfig()->setInterval(new \DateInterval('P12M'));
+$cal->day_callback = function($date){
+    $day = new \stdClass();
+    $day->has_passed = $date->getTimestamp()<time();
+    return $day;
+};
+
+// Spanish months (There is tons of ways of doing this but...)
+$context['months_es'] = array(
+    1=>'Enero', 'Febrero', 'Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'
+);
+// The week days order. In spanish calendar this is different than in english.
+$context['week_days'] = array(1,2,3,4,5,6,0);
+// The calendar structure...
+$context['cal'] = $cal->getCalendarStructure();
+```
+
+Yeah, the Twig file...
+
+```twig
+{% for year in cal %}
+    {# You could add here the years #}
+    {% for quarter in year.elements %}
+        {% for month in quarter.elements %}
+        <table class="month">
+            <tbody>
+            <tr>
+                <th colspan="9" class="month-title">{{ year.value }} - {{ months_es[month.value] }}</th>
+            </tr>
+            <tr>
+                <th>L</th>
+                <th>M</th>
+                <th>X</th>
+                <th>J</th>
+                <th>V</th>
+                <th class="thweekend">S</th>
+                <th class="thweekend">D</th>
+            </tr>
+            </tbody>
+
+            {% for week in month.elements %}
+                <tr>
+                    {# You could add here the week number #}
+                    {% for week_day in week_days%}
+                        <td class="day-container">
+                            {% for day in week.elements %}
+                                {% if day.weekday == week_day %}
+                                    <div class="day {% if day.data.has_passed %}passed_day{% endif %} {% if week_day == 6 or week_day == 0 %}weekend{% endif %}">
+                                        {{ day.value }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+```
