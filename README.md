@@ -1,6 +1,8 @@
 Stupidly Simple Calendar [![Build Status](https://travis-ci.org/alrik11es/stupidly-simple-calendar.svg?branch=master)](https://travis-ci.org/alrik11es/stupidly-simple-calendar)
 ======================
 
+[![Latest Stable Version](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/v/stable.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![Total Downloads](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/downloads.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![Latest Unstable Version](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/v/unstable.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![License](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/license.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar)
+
 Stupidly Simple Calendar a.k.a. "SSC" is a PHP calendar structure generator in array, object or JSON format.
 
 * [Installation](#installation)
