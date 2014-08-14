@@ -3,25 +3,22 @@ Stupidly Simple Calendar [![Build Status](https://travis-ci.org/alrik11es/stupid
 
 Stupidly Simple Calendar a.k.a. "SSC" is a PHP calendar structure generator in array, object or JSON format.
 
-* [Installation](#install)
+* [Installation](#installation)
     * [Requirements](#requirements)
-    * [With composer](#install-composer)
-* [How it works](#work)
+    * [With composer](#with-composer)
+* [How it works](#how-it-works)
 
 ##Motivation
 
 Do you remember those long... long... hours trying to create a rendered calendar? Think about this, the main problem is that you have to generate the structure to do the rendering in your template engine, no matter what it is. So the thing  here is I don't wanna give you a fully rendered calendar just the structure you need to do the render. How do you do to render it... it's all on you.
 
-<a name="install"/>
 ## Installation
 
-<a name="requirements"/>
 ### Requirements
 
 - Any flavour of PHP 5.4+ should do
 - [optional] PHPUnit to execute the test suite
 
-<a name="install-composer"/>
 ### With Composer
 
 The easiest way to install SSC is via [composer](http://getcomposer.org/). Create the following `composer.json` file and run the `php composer.phar install` command to install it.
@@ -34,7 +31,6 @@ The easiest way to install SSC is via [composer](http://getcomposer.org/). Creat
 }
 ```
 
-<a name="work"/>
 ##How it works
 Lets get into business. Set up a calendar from today to 6 months into the future:
 
