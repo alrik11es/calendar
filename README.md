@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/alrik11es/stupidly-simple-calendar.svg?branch=master)](https://travis-ci.org/alrik11es/stupidly-simple-calendar)
-Stupidly Simple Calendar 
+Stupidly Simple Calendar [![Build Status](https://travis-ci.org/alrik11es/stupidly-simple-calendar.svg?branch=master)](https://travis-ci.org/alrik11es/stupidly-simple-calendar)
 ======================
 
 Stupidly Simple Calendar a.k.a. "SSC" is a PHP calendar structure generator in array, object or JSON format.
