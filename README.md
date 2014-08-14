@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/alrik11es/stupidly-simple-calendar.svg?branch=master)](https://travis-ci.org/alrik11es/stupidly-simple-calendar)
-
 Stupidly Simple Calendar 
 ======================
 
