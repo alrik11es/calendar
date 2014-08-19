@@ -1,10 +1,14 @@
 <?php
+/**
+ * To execute this example you need to install the library with composer in order
+ * to use the autoload in this include file.
+ * If you dont wanna use composer just include each file from the src directory.
+ */
 include '../vendor/autoload.php';
 
 $cal = new \SSC\Calendar();
 
 $cal->day_callback = function($date){
-
     $day = new stdClass();
     $day->has_passed = $date->getTimestamp()<time();
     return $day;

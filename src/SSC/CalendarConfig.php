@@ -33,7 +33,8 @@ class CalendarConfig{
         return $this->formatter;
     }
     
-    public function setStartDate(\DateTime $date){
+    public function setStartDate(\DateTime $date)
+    {
         $this->start_date = $date;
     }
     
