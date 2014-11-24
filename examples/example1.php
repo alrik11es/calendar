@@ -4,6 +4,14 @@
  * to use the autoload in this include file.
  * If you dont wanna use composer just include each file from the src directory.
  */
+ 
+//include 'calendar/src/SSC/Calendar.php';
+//include 'calendar/src/SSC/CalendarConfig.php';
+//include 'calendar/src/SSC/formatters/FormatterInterface.php';
+//include 'calendar/src/SSC/formatters/ArrayFormatter.php';
+//include 'calendar/src/SSC/formatters/ObjectFormatter.php';
+//include 'calendar/src/SSC/formatters/JsonFormatter.php';
+
 include '../vendor/autoload.php';
 
 $cal = new \SSC\Calendar();
