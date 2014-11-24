@@ -28,7 +28,7 @@ The easiest way to install SSC is via [composer](http://getcomposer.org/). Creat
 ```json
 {
     "require": {
-        "alrik11es/stupidly-simple-calendar": "0.*"
+        "alrik11es/stupidly-simple-calendar": "0.1.*"
     }
 }
 ```
