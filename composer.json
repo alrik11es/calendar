@@ -1,7 +1,7 @@
 {
-    "name": "alrik11es/stupidly-simple-calendar",
+    "name": "ucnu/calendar",
     "description": "An structured calendar generator in array, object or json format",
-    "keywords": ["SSC", "calendar", "generator"],
+    "keywords": ["calendar", "generator"],
     "type": "library",
     "license": "MIT",
     "authors": [
