@@ -1,9 +1,9 @@
-Stupidly Simple Calendar [![Build Status](https://travis-ci.org/ucnu/calendar.svg?branch=master)](https://travis-ci.org/ucnu/calendar)
+UCNU Calendar [![Build Status](https://travis-ci.org/ucnu/calendar.svg?branch=master)](https://travis-ci.org/ucnu/calendar)
 ======================
 
 [![Latest Stable Version](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/v/stable.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![Total Downloads](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/downloads.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![Latest Unstable Version](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/v/unstable.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![License](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/license.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar)
 
-Stupidly Simple Calendar a.k.a. "SSC" is a PHP calendar structure generator in array, object or JSON format.
+UCNU Calendar is a PHP calendar structure generator in array, object or JSON format.
 
 * [Installation](#installation)
     * [Requirements](#requirements)
@@ -28,7 +28,7 @@ The easiest way to install SSC is via [composer](http://getcomposer.org/). Creat
 ```json
 {
     "require": {
-        "alrik11es/stupidly-simple-calendar": "0.1.*"
+        "ucnu/calendar": "0.1.*"
     }
 }
 ```
