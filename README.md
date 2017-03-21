@@ -10,7 +10,7 @@ UCNU Calendar is a PHP calendar structure generator in array, object or JSON for
     * [With composer](#with-composer)
 * [How it works](#how-it-works)
 
-##Motivation
+## Motivation
 
 Do you remember those long... long... hours trying to create a rendered calendar? Think about this, the main problem is that you have to generate the structure to do the rendering in your template engine, no matter what it is. So the thing  here is I don't wanna give you a fully rendered calendar just the structure you need to do the render. How do you do the render... it's all on you.
 
@@ -127,7 +127,7 @@ Then you just have to take it and render in your Twig or whatever... (Next one i
 <?php endforeach; ?>
 ```
 
-#Bam! Calendar!
+# Bam! Calendar!
 
 Oh BTW I can give you a Twig example Just for the record :P
 
