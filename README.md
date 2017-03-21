@@ -37,7 +37,7 @@ The easiest way to install SSC is via [composer](http://getcomposer.org/). Creat
 
 Git clone this repo where you want and include/require all the src folder into your project.
 
-##How it works
+## How it works
 Lets get into business. Set up a calendar from today to 6 months into the future:
 
 ```php
