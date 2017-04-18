@@ -194,3 +194,67 @@ Yeah, the Twig file...
     {% endfor %}
 {% endfor %}
 ```
+# Vue.js
+```
+<template>
+
+    <div>
+        <div v-for="year in calendar">
+            <!--<div>{{year.value}}</div>-->
+            <div v-for="quarter in year.elements">
+                <div v-for="month in quarter.elements" class="month">
+                    {{ year.value }} - {{ month.value }}
+                    <table>
+                        <tr>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fra</th>
+                            <th>Sun</th>
+                            <th>Sat</th>
+                        </tr>
+                        <tr v-for="week in month.elements">
+                            <td v-for="weekday in [1,2,3,4,5,6,0]">
+                                <div v-for="day in week.elements">
+                                    <span v-if="day.weekday == weekday">
+                                        {{ day.value }}
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                calendar: {},
+            }
+        },
+        methods: {
+        },
+        mounted() {
+            axios.get('/api/calendar').then(response => {
+                this.calendar = response.data;
+                console.log(this.calendar);
+            }).catch(e => {
+            });
+        }
+    }
+</script>
+
+
+<style scoped lang="sass">
+    .month{
+        float: left;
+        margin: 10px;
+    }
+</style>
+```
