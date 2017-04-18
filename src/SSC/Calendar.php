@@ -61,8 +61,12 @@ class Calendar{
             $month = $date->format('n');
             $day = $date->format('j');
             $quarter = (int) ceil($month / 3);
-            $week = $date->format('W');
-            $week_day = $date->format('w');
+            $week = (int) $date->format('W');
+            $week_day = (int) $date->format('w');
+
+            if($month == 1 && $week > 50){
+                $week = 0;
+            }
 
             if(!array_key_exists($year, $cal)){
                 $cal[$year] = array(
