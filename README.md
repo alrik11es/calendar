@@ -1,7 +1,7 @@
-UCNU Calendar [![Build Status](https://travis-ci.org/ucnu/calendar.svg?branch=master)](https://travis-ci.org/ucnu/calendar)
+UCNU Calendar [![Build Status](https://travis-ci.org/alrik11es/calendar.svg?branch=master)](https://travis-ci.org/alrik11es/calendar)
 ======================
 
-[![Latest Stable Version](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/v/stable.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![Total Downloads](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/downloads.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![Latest Unstable Version](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/v/unstable.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar) [![License](https://poser.pugx.org/alrik11es/stupidly-simple-calendar/license.svg)](https://packagist.org/packages/alrik11es/stupidly-simple-calendar)
+[![Latest Stable Version](https://poser.pugx.org/alrik11es/calendar/v/stable.svg)](https://packagist.org/packages/alrik11es/calendar) [![Total Downloads](https://poser.pugx.org/alrik11es/calendar/downloads.svg)](https://packagist.org/packages/alrik11es/calendar) [![Latest Unstable Version](https://poser.pugx.org/alrik11es/calendar/v/unstable.svg)](https://packagist.org/packages/alrik11es/calendar) [![License](https://poser.pugx.org/alrik11es/calendar/license.svg)](https://packagist.org/packages/alrik11es/calendar)
 
 UCNU Calendar is a PHP calendar structure generator in array, object or JSON format.
 
@@ -12,7 +12,11 @@ UCNU Calendar is a PHP calendar structure generator in array, object or JSON for
 
 ## Motivation
 
-Do you remember those long... long... hours trying to create a rendered calendar? Think about this, the main problem is that you have to generate the structure to do the rendering in your template engine, no matter what it is. So the thing  here is I don't wanna give you a fully rendered calendar just the structure you need to do the render. How do you do the render... it's all on you.
+Do you remember those long... long... hours trying to create a rendered calendar? Think about this, the main problem is that you have to generate the structure to do the rendering in your template engine, no matter what it is. So the thing here is I don't wanna give you a fully rendered calendar just the structure you need to do the render. How do you do the render... it's all on you.
+
+Take a look to this example render:
+
+![Calendar example](img/calendar.png "Calendar example")
 
 ## Installation
 
@@ -195,7 +199,10 @@ Yeah, the Twig file...
 {% endfor %}
 ```
 # Vue.js
-```
+
+With the boom of this kind of libraries just like angular or react. I give you an example of how a render should look like. Obviously you will need to make the API part. But at least this is a good starting point.
+
+```html
 <template>
 
     <div>
