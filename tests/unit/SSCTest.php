@@ -1,6 +1,6 @@
 <?php
 
-class SSCTest extends PHPUnit_Framework_TestCase{
+class SSCTest extends \PHPUnit\Framework\TestCase{
     
     /**
      * Default test. A 6 months calendar with the entire structure, including:

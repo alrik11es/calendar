@@ -1,9 +1,9 @@
-UCNU Calendar [![Build Status](https://travis-ci.org/alrik11es/calendar.svg?branch=master)](https://travis-ci.org/alrik11es/calendar)
+Calendar [![Build Status](https://travis-ci.org/alrik11es/calendar.svg?branch=master)](https://travis-ci.org/alrik11es/calendar)
 ======================
 
 [![Latest Stable Version](https://poser.pugx.org/alrik11es/calendar/v/stable.svg)](https://packagist.org/packages/alrik11es/calendar) [![Total Downloads](https://poser.pugx.org/alrik11es/calendar/downloads.svg)](https://packagist.org/packages/alrik11es/calendar) [![Latest Unstable Version](https://poser.pugx.org/alrik11es/calendar/v/unstable.svg)](https://packagist.org/packages/alrik11es/calendar) [![License](https://poser.pugx.org/alrik11es/calendar/license.svg)](https://packagist.org/packages/alrik11es/calendar)
 
-UCNU Calendar is a PHP calendar structure generator in array, object or JSON format.
+Calendar is a PHP calendar structure generator in array, object or JSON format.
 
 * [Installation](#installation)
     * [Requirements](#requirements)
@@ -27,12 +27,12 @@ Take a look to this example render:
 
 ### With Composer
 
-The easiest way to install SSC is via [composer](http://getcomposer.org/). Create the following `composer.json` file and run the `php composer.phar install` command to install it.
+The easiest way to install the calendar is via [composer](http://getcomposer.org/). Create the following `composer.json` file and run the `php composer.phar install` command to install it.
 
 ```json
 {
     "require": {
-        "ucnu/calendar": "0.1.*"
+        "alrik11es/calendar": "0.1.*"
     }
 }
 ```
