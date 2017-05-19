@@ -22,7 +22,7 @@ Take a look to this example render:
 
 ### Requirements
 
-- Any flavour of PHP 5.4+ should do
+- Any flavour of PHP 5.6+ should do
 - [optional] PHPUnit to execute the test suite
 
 ### With Composer
