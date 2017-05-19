@@ -1,5 +1,5 @@
 {
-    "name": "ucnu/calendar",
+    "name": "alrik11es/calendar",
     "description": "An structured calendar generator in array, object or json format",
     "keywords": ["calendar", "generator"],
     "type": "library",
